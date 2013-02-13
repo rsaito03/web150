@@ -1,0 +1,52 @@
+
+<!doctype html >
+<head>
+<meta charset="utf-8">
+ 
+</head>
+
+<body>
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="shelf.js"></script>
+<script>
+//Q1---------------------------------------------------
+var formatBook = function(input){
+  var title = shelf[input].title;
+	var author = shelf[input].author;
+	return "Title: <b>" + title + "</b> Author: <b>" + author + "</b><br/>";
+	}
+	
+document.write(formatBook(1));
+
+//Q2---------------------------------------------------
+var loanToggle = function(input){
+	var checkout = shelf[input].checkedOut;
+		
+		if(checkout==false){
+			checkout=true;
+			return checkout + "<br/>";
+			
+		}else if(checkout==true){
+			checkout = false;
+			return checkout + "<br/>";
+			}	
+	}
+	
+document.write(loanToggle(0));
+document.write(loanToggle(1));
+document.write(loanToggle(2));
+
+//Q3---------------------------------------------------	
+var listBooks = function(){
+		for(var i=0; i<shelf.length; i++){
+			document.write(formatBook(i));
+			}
+	}
+	
+document.write(listBooks());
+
+</script>
+</body>
+</html>
